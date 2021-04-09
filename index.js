@@ -4,7 +4,12 @@ const app= express();
 const cookieParser = require('cookie-parser');
 const epressLayouts = require('express-ejs-layouts');
 const db =require('./config/mongoose');
-const { urlencoded } = require('express');
+
+//used for session cookie and authentication
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal =require('./config/passport-local-strategy');
+//const { urlencoded } = require('express');
 
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -17,13 +22,32 @@ app.use(epressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-//use express router
+
 
 
 app.set('view engine','ejs');
 app.set('views','./views');
 
-app.use('/',require('./routes/index'));
+
+app.use(session({
+    name:'Codeial',
+    //todo change the secret later which deployed on server
+    secret:'blahsomething',
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        maxAge:(100*60*100)
+    }
+}));
+ 
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
+
+app.use('/',require('./routes/index'));  
+
 
 app.listen(port,function(err) {
     if(err){
