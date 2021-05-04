@@ -13,7 +13,6 @@
   "author": "Aditya Agarwal",
   "license": "ISC",
   "dependencies": {
-    "connect-mongo": "^4.4.1",
     "connect-mongodb-session": "^2.4.1",
     "cookie-parser": "^1.4.5",
     "ejs": "^3.1.6",
