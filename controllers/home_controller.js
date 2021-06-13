@@ -12,10 +12,14 @@ module.exports.home = function(req,res) {
         }
     })
     .exec(function(err,post){
-        return res.render('home',{
-            post:post,
-            title:'Codeial | home'
-        });
+
+        User.find({},function(err,users){
+            return res.render('home',{
+                post:post,
+                all_user:users,
+                title:'Codeial | home'
+            });
+        });    
     });
     
 };

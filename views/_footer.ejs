@@ -1,1 +1,18 @@
-<footer>Page footer</footer>
+<footer>
+    <div id="author" style="display: inline-block;">
+        <h4>By Aditya Agarwal</h4>
+    </div>
+    <div id="page-links" style="display: inline-block;">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <% if(locals.user){%>
+                <li>
+                    <a href="/users/profile/<%= user._id %>">Profile Page</a>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+
+</footer>

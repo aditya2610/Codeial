@@ -22,10 +22,23 @@ module.exports.signIn = function(req,res){
 };
 
 module.exports.profile = function(req,res){
-    return res.render('profile',{
-        title:'Codeial'
+    User.findById(req.params.id,function(err,users){
+        return res.render('profile',{
+            title:'Codeial',
+            profile_user : users
+        });
+    });
+    
+};
+
+module.exports.update = function(req,res){
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unauthorized!');
     }
-    );
 };
 
 //get the sign up data
@@ -64,3 +77,4 @@ module.exports.destroySession = function(req,res){
 
     return res.redirect('/');
 }
+

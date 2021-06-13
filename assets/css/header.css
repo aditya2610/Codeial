@@ -1,0 +1,23 @@
+header {
+  height: 10%;
+  background-color: beige;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 1% 0% 2%; }
+  header h1 {
+    padding-left: 1%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 30vw; }
+  header ul {
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; }
+    header ul li {
+      font-family: fantasy;
+      font-weight: 600;
+      font-size: 120%;
+      width: 10vw; }
