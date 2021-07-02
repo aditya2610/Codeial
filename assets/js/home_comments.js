@@ -12,9 +12,29 @@
                 success: function(data){
                     let newComment = newCommentDom(data.data.comments);
                     $(`#post-comments-${data.data.comments.post}`).prepend(newComment);
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: "Comment Created",
+                        type: 'success',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
                     deleteComment($(' .delete-comment-button',newComment));
                     console.log(data.data.comments);
                 }, error(error){
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: error.responseText,
+                        type: 'error',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
                     console.log(error.responseText);
                 }
             })
@@ -47,8 +67,28 @@
                 url: $(deleteLink).prop('href'),
                 success: function(data){
                     console.log(data);
-                    $(`comment-${data.data.comment_id}`).remove();
+                    $(`#comment-${data.data.comment_id}`).remove();
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: "Comment Removed",
+                        type: 'success',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show(); 
+
                 },error(error){
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: error.responseText,
+                        type: 'error',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
                     console.log(error.responseText);
                 }
             });

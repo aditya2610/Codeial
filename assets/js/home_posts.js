@@ -14,8 +14,30 @@
                 success: function(data){
                     let newPost = newPostDom(data.data.post);
                     $('#post-list-container>ul').prepend(newPost);
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: "Post Created",
+                        type: 'success',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
+
                     deletePost($(' .delete-post-button',newPost));
                 }, error(error){
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: error.responseText,
+                        type: 'error',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
+                        
                     console.log(error.responseText);
                 }
             })
@@ -63,7 +85,29 @@
                 success: function(data){
                     console.log(data);
                     $(`#post-${data.data.post_id}`).remove();
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: "Post Removed",
+                        type: 'success',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
+
                 },error(error){
+
+                    new Noty({
+                        theme : 'relax' , 
+                        text: error.responseText,
+                        type: 'error',
+                        layout : "topRight",
+                        timeout : 1500
+                        
+                        }).show();
+
+
                     console.log(error.responseText);
                 }
             });

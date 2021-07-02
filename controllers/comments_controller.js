@@ -52,7 +52,7 @@ module.exports.destroy =async function (req, res){
                 });
             }
 
-            req.flash('success','Comment Deleted!!');
+            req.flash('success','Comment Removed!!');
             return res.redirect('back');
         }else{
             req.flash('error','Not Authorized to delete Comment');
