@@ -1,27 +1,43 @@
 <header>
-    <h1 id="heading">CODEIAL</h1>
-    <ul>
-        <%if(locals.user){%>
-            <li id="profile-name">
-                <a href="/users/profile/<%= user._id %>">
-                    <%=user.name%>
-                </a>
-            </li>
-            <li>
-                <a href="/users/sign-out">Sign Out</a>
-            </li>
-
-        <%}else{%>
-            <li>
-                <a href="/users/sign-in" id="">Sign In</a>
-            </li>
-            <li>
-                <a href="/users/sign-up">Sign Up</a>
-            </li>
-        <%}%>
-    </ul>
-
-
-
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark header" id="myHeader">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Stock Talks</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+        </ul>
+        <div class="d-flex text-end">
+                <%if(locals.user){%>
+                    
+                        <a href="/users/profile/<%= user._id %>" class="btn btn-outline-light me-2 btn-design">
+                            <%=user.name%>
+                        </a>
+                    
+                    
+                        <a href="/users/sign-out" class="btn btn-warning btn-design">Sign Out</a>
+                    
+        
+                <%}else{%>
+                    
+                        <a href="/users/sign-in" class="btn btn-outline-light me-2 btn-design">Sign In</a>
+                    
+                    
+                        <a href="/users/sign-up" class="btn btn-warning btn-design">Sign Up</a>
+                    
+                <%}%>
+              <!-- <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button> -->
+            </div>
+      </div>
+    </div>
+  </nav>
 </header>
+<script src="js/header.js"></script>
