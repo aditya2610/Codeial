@@ -9,7 +9,7 @@ module.exports.signUp = function(req,res){
     }
 
     return res.render('sign-up',{
-        title:'Codeial'
+        title:'Stock Talks'
     }
     );
 };
@@ -20,7 +20,7 @@ module.exports.signIn = function(req,res){
         return res.redirect('./profile');
     }
     return res.render('sign-in',{
-        title:'Codeial'
+        title:'Stock Talks'
     }
     );
 };
@@ -29,7 +29,7 @@ module.exports.profile =async function(req,res){
     try{
         let users =await User.findById(req.params.id);
         return res.render('profile',{
-        title:'Codeial',
+        title:'Stock Talks',
         profile_user : users
         });
     }catch(err){
@@ -117,4 +117,11 @@ module.exports.destroySession = function(req,res){
     req.flash('success','You are logged out!');
     return res.redirect('/');
 }
+
+module.exports.forgot_email_page = function(req,res){
+    return res.render('forgot_email',{
+        title: 'Forgot Password'
+    })
+};
+
 
