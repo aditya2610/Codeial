@@ -6,11 +6,14 @@
             e.preventDefault();
 
             $.ajax({
-                type:'post',
+                type:'POST',
                 url: '/comments/create',
                 data: newCommentForm.serialize(),
                 success: function(data){
                     let newComment = newCommentDom(data.data.comments);
+
+                    new ToggleLike($('.toggle-like-button',newComment));
+
                     $(`#post-comments-${data.data.comments.post}`).prepend(newComment);
 
                     new Noty({
@@ -54,6 +57,13 @@
                     ${comments.content}
                     <br>
                     <small>${comments.user.name}</small>
+
+                    <br>
+                    <small>
+                        <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comments._id}&type=Comment">
+                            0 Likes
+                        </a>
+                    </small>
                 </p>
         </li>`)
     }
