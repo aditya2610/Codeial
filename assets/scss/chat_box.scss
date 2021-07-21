@@ -1,0 +1,169 @@
+
+
+body{
+    background-color:rgba(0, 0, 0, .19);
+}
+
+#chatbox-heading{
+    
+    padding-top: 1%;
+    height: 9%;
+    text-align: center;
+    align-items: center;
+    font-size: 3rem;
+    text-decoration-line: underline;
+    text-decoration-color: black;
+    text-decoration-thickness: 3px;
+}
+
+
+.chat-home{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    min-height:80vh;
+    justify-content: space-around;
+    align-items: center;
+    .chat-seperate{
+        box-shadow: 0 4px 8px 0 rgba(19, 16, 16, 0.2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+        display: flex;
+        flex-direction: column;
+        margin:10px;
+        img{
+            width:300px;
+            height:300px;
+
+        }
+        .category{
+            padding:6px;
+            text-align: center;
+            a{
+                color:rgb(17, 17, 48);
+                font-size:1.5rem;
+                text-decoration: none;
+            }
+            a:hover{
+                color: blue;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+ #chat-box{
+    margin: auto;
+    width: 70%;
+    border: 1px solid black;
+    box-shadow: 0px 6px 12px 0px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: 1000px;
+    #message-list-container{
+        overflow:scroll;
+        width: 100%;
+        min-height: 500px;
+        max-height:700px;
+        background-color:rgba(224, 219, 219, 0.993);
+        border-radius: 5px 5px 5px 5px;
+        .seperate-message{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px 5px 5px 5px;
+            .details{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color:rgb(16, 88, 16);
+                border-radius: 5px 5px 0px 0px;
+                #user-name{
+                    padding: 3px;
+                    font-size: 1.1rem;
+                    color: white;
+
+                }
+                .message-setting{
+                    padding: 3px;
+                    .icon{
+                        color: white;
+                    }
+                    .icon:hover{
+                        color: red;
+
+
+                    }
+
+                }
+                 
+
+             }
+             #user_detail{
+                background-color:rgb(15, 15, 143);
+            }
+             .message{
+                padding: 8px;
+                text-align: justify;
+                .message-details{
+                    padding: 5px;
+
+                }
+
+             }
+             .message-info{
+                padding: 2px;
+                background-color:rgb(169, 170, 164);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-radius: 0px 0px 5px 5px;
+                }
+            }
+        }
+        #message-form{
+            height: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+    
+            #message-input,#message-link{
+                width: 70%;
+                border:1px solid grey;
+                outline:none;
+                padding:3px;
+                
+            }
+            #message-input{
+                width:100%;
+            }
+    
+            #send-message{
+                width: 30%;
+                padding:3px;
+                font-size: 1rem;
+                color: white;
+                border: none;
+                background-color: red;
+            }
+            #send-message:hover{
+                background-color:lightcoral;
+            }
+        }
+        
+    }
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width:800px) {
+	#chat-box {
+        width:80%;
+	}
+}
