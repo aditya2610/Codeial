@@ -33,9 +33,9 @@ const chatSchema=new mongoose.Schema({
 
 const EQUITY=mongoose.model('EQUITY',chatSchema);
 const DERIVATIVE=mongoose.model('DERIVATIVE',chatSchema);
-const MUTUALFUND=mongoose.model('MUTUALFUND',chatSchema);
+const MF=mongoose.model('MF',chatSchema);
 const IPO=mongoose.model('IPO',chatSchema);
 
 module.exports={
-    EQUITY,DERIVATIVE,MUTUALFUND,IPO
+    EQUITY,DERIVATIVE,MF,IPO
 };

@@ -1,4 +1,4 @@
-const {EQUITY,DERIVATIVE,MUTUALFUND,IPO} = require('../models/chat');
+const {EQUITY,DERIVATIVE,MF,IPO} = require('../models/chat');
 
 
 function convert(date){
@@ -50,8 +50,8 @@ module.exports.chatSocket = function(chatServer){
                 newMessage=await EQUITY.create(data);
             }else if(data.room_id=='IPO'){
                 newMessage=await IPO.create(data);
-            }else if(data.room_id=='Mutual-Funds'){
-                newMessage=await MUTUALFUND.create(data);
+            }else if(data.room_id=='MutualFunds'){
+                newMessage=await MF.create(data);
             }else if(data.room_id=='Derivatives'){
                 newMessage=await DERIVATIVE.create(data);
             }

@@ -1,4 +1,4 @@
- const {EQUITY,DERIVATIVE,MUTUALFUND,IPO} = require('../models/chat');
+ const {EQUITY,DERIVATIVE,MF,IPO} = require('../models/chat');
 
 module.exports.chat=async function(req,res){
     let chats;
@@ -8,12 +8,12 @@ module.exports.chat=async function(req,res){
         chats=await EQUITY.find({});
     }else if(room=='Derivatives'){
         chats=await DERIVATIVE.find({});
-    }else if(room=='Mutual-funds'){
-        chats=await MUTUALFUND.find({});
+    }else if(room=='MutualFunds'){
+        chats=await MF.find({});
     }else if(room=='IPO'){
         chats=await IPO.find({});
     }
-    res.render('_chat_box.ejs',{
+    res.render('_chatroom.ejs',{
         title:`${req.params.room} Room`,
         messages:chats,
         room:req.params.room
@@ -60,7 +60,7 @@ module.exports.destroy=async function(req,res){
             });
         }
     }
-    message=await MUTUALFUND.findById(req.params.id);
+    message=await MF.findById(req.params.id);
     if(message!=undefined)
     {
         message.remove();

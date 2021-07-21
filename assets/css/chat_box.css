@@ -11,44 +11,65 @@ body {
   text-decoration-color: black;
   text-decoration-thickness: 3px; }
 
-.chat-home {
+#chatroom {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  min-height: 80vh;
-  justify-content: space-around;
-  align-items: center; }
-  .chat-home .chat-seperate {
-    box-shadow: 0 4px 8px 0 rgba(19, 16, 16, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-items: center;
+  margin: 4%;
+  max-height: 1000px; }
+  #chatroom .chat-home {
     display: flex;
     flex-direction: column;
-    margin: 10px; }
-    .chat-home .chat-seperate img {
-      width: 300px;
-      height: 300px; }
-    .chat-home .chat-seperate .category {
-      padding: 6px;
-      text-align: center; }
-      .chat-home .chat-seperate .category a {
-        color: #111130;
-        font-size: 1.5rem;
-        text-decoration: none; }
-      .chat-home .chat-seperate .category a:hover {
-        color: blue;
-        text-decoration: underline; }
+    justify-content: space-around; }
+    #chatroom .chat-home .chat-seperate {
+      padding: 5px;
+      height: 130px;
+      width: 250px;
+      background-color: #d3cccc; }
+      #chatroom .chat-home .chat-seperate .category {
+        height: 100%;
+        width: 100%;
+        font: size 2rem;
+        text-align: center;
+        background-color: black; }
+        #chatroom .chat-home .chat-seperate .category p {
+          padding-top: 30px;
+          font-size: 1.5rem; }
+          #chatroom .chat-home .chat-seperate .category p .link {
+            color: white; }
+          #chatroom .chat-home .chat-seperate .category p .link:hover {
+            color: red;
+            font-size: 2rem; }
+  #chatroom #room-content {
+    padding-top: 15px;
+    width: 100%;
+    max-height: 900px;
+    display: flex;
+    justify-content: center; }
+    #chatroom #room-content #chatbox-start {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: white;
+      height: 90%;
+      width: 70%; }
+      #chatroom #room-content #chatbox-start p {
+        text-align: center;
+        height: 100%;
+        font-size: 3rem; }
 
 ::-webkit-scrollbar {
   display: none; }
 
 #chat-box {
-  margin: auto;
+  margin-left: 4%;
   width: 70%;
   border: 1px solid black;
   box-shadow: 0px 6px 12px 0px black;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-height: 1000px; }
+  min-height: 600px;
+  max-height: 600px; }
   #chat-box #message-list-container {
     overflow: scroll;
     width: 100%;
