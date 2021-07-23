@@ -12,6 +12,8 @@ router.get('/sign-in',userController.signIn);
 router.get('/profile/:id',passport.checkAuthentication,userController.profile);
 router.post('/update/:id',passport.checkAuthentication,userController.update);
 
+router.get('/stock_chat',passport.checkAuthentication,userController.stockChat);
+
 router.post('/create',userController.create);
 
 //use passport as a middleware to authenticate

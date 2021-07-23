@@ -1,5 +1,5 @@
-<!-- css file needed for home -->
-<link rel="stylesheet" href="css/home.css">
+
+<link rel="stylesheet" href="<%= assetPath('css/home.css')%>">
 
 <div id="home-container">
     <section id="feed-post">
@@ -31,10 +31,10 @@
         <%}%>
     </section>    
 </div>
-<script src="js/home_posts.js"></script>
-<script src="js/home_comments.js"></script>
+<script src="<%= assetPath('js/home_posts.js') %>"></script>
+<script src="<%= assetPath('js/home_comments.js') %>"></script>
 
-<script src="js/toggle_likes.js"></script>
+<script src="<%= assetPath('js/toggle_likes.js') %>"></script>
 
 <script>
     $('.toggle-like-button').each(function(){

@@ -39,6 +39,18 @@ module.exports.profile =async function(req,res){
     
 };
 
+module.exports.stockChat =function(req,res){
+    if(req.isAuthenticated()){
+    return res.render('_chatroom.ejs',{
+        title:'Stocks-ChatBox',
+        room :'',
+        messages:''
+    });
+    }
+    return res.redirect('back');
+};
+
+
 module.exports.update = async function(req,res){
     
     if(req.user.id == req.params.id){

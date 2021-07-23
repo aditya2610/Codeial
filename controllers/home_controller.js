@@ -46,11 +46,3 @@ module.exports.home =async function(req,res) {
    
 };
 
-module.exports.stockChat = async function(req,res){
-    
-    res.render('_chatroom.ejs',{
-        title:'Stocks-ChatBox',
-        room :'',
-        messages:''
-    });
-}

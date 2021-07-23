@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="/css/chat_box.css">
+<link rel="stylesheet" href="<%= assetPath('css/chat_box.css') %>">
 <div id="chatbox-heading">
     <h1>Welcome to our Chat Rooms!!</h1>
 </div>
@@ -106,7 +106,7 @@
                                             <span> <%= data.time %> </span>
                                         </div>
                                         <div>
-                                            <span>Message-Id : <%= data.id.slice(20) %></span>
+                                            <span>Message-Id : <%= data.id.slice(20) %> </span>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
-<script src="/js/chat_engine.js"></script>
-<script src="/js/chat-setting.js"></script>
+<script src="<%= assetPath('js/chat_engine.js') %>"></script>
+<script src="<%= assetPath('js/chat-setting.js') %>"></script>
 
 <% if(locals.user){ %>
     <script>
