@@ -1,6 +1,8 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 
+
+
 let pops=async function(posts){
     for(postX of posts){
         await postX.populate('user name').execPopulate();
@@ -38,7 +40,7 @@ module.exports.home =async function(req,res) {
         return res.render('home',{
             posts:posts,
             all_user:users,
-            title:'Codeial | home'
+            title:'StockTalks | home'
         });
     }catch(err){
         console.log("Error found!",err);
