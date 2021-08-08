@@ -1,0 +1,18 @@
+.comments-blocks{
+    margin-top:10px;
+    background-color:rgb(231, 227, 227);
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+    //margin: 10px 10px 10px -20px;
+    width:90%;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    .comment-content{
+        font-size: 1.1rem;
+        
+    }
+    .like-icon{
+        text-decoration-line: none;
+    }
+}

@@ -42,12 +42,11 @@ module.exports.chatSocket = function(chatServer){
             const obj=convert(date);
             data.date=obj.rdate;
             data.time=obj.rtime;
-            
-            console.log(data);
             let newMessage;
             if(data.room_id=='Equity')
             {
                 newMessage=await EQUITY.create(data);
+                
             }else if(data.room_id=='IPO'){
                 newMessage=await IPO.create(data);
             }else if(data.room_id=='MutualFunds'){

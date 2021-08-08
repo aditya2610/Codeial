@@ -20,12 +20,14 @@ module.exports.chat=async function(req,res){
     });
 }
 module.exports.destroy=async function(req,res){
-    console.log(req.params.id);
+    //console.log(req.params.id);
     let message=await EQUITY.findById(req.params.id);
+    console.log("I am mess",message);
     if(message!=undefined)
     {
         message.remove();
         if (req.xhr){
+            console.log("Its a xhr req");
             return res.status(200).json({
                 data: {
                     message_id: req.params.id
@@ -52,6 +54,7 @@ module.exports.destroy=async function(req,res){
     {
         message.remove();
         if (req.xhr){
+
             return res.status(200).json({
                 data: {
                     message_id: req.params.id

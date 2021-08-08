@@ -87,8 +87,8 @@ class ChatEngine{
                                 <span>${data.username}</span>
                             </div>
                             <div class="message-setting">
-                                <a class="message-reply" href="<%=data.id.slice(20)%>"><i class="fas fa-reply icon"></i></a>&nbsp
-                                <a class="message-delete" href="delete/<%=data.id%>"><i class="fas fa-trash icon"></i></a>
+                                <a class="message-reply" href="${data.id.slice(20)}"><i class="fas fa-reply icon"></i></a>&nbsp
+                                <a class="message-delete" href="delete/${data.id}"><i class="fas fa-trash icon"></i></a>
                             </div>
                         </div>
                         <div class="message" >
@@ -105,7 +105,7 @@ class ChatEngine{
                                 <span> ${data.time} </span>
                             </div>
                             <div>
-                                <span>Message-Id : ${data.id.slice(20)}%></span>
+                                <span>Message-Id : ${data.id.slice(20)}</span>
                             </div>
                         </div>
                     </div>
@@ -119,8 +119,8 @@ class ChatEngine{
                                 <span>${data.username}</span>
                             </div>
                             <div class="message-setting">
-                                <a class="message-reply" href="<%=data.id.slice(20)%>"><i class="fas fa-reply icon"></i></a>&nbsp
-                                <a class="message-delete" href="delete/<%=data.id%>"><i class="fas fa-trash icon"></i></a>
+                                <a class="message-reply" href="${data.id.slice(20)}"><i class="fas fa-reply icon"></i></a>&nbsp
+                                <a class="message-delete" href="delete/${data.id}"><i class="fas fa-trash icon"></i></a>
                             </div>
                         </div>
                         <div class="message" >
@@ -136,7 +136,7 @@ class ChatEngine{
                                 <span> ${data.time} </span>
                             </div>
                             <div>
-                                <span>Message-Id : ${data.id.slice(20)}%></span>
+                                <span>Message-Id : ${data.id.slice(20)}</span>
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@ class ChatEngine{
             $('.message-delete').each(function(){
                 let self=this;
                 let delete_message=new Delete(self);
-            })
+            });
      
     });
     }

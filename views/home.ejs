@@ -3,15 +3,14 @@
 
 <div id="home-container">
     <section id="feed-post">
-        <h4>Posts</h4>
         <% if(locals.user){ %>
         <form action="/posts/create" method="POST" id="new-post-form">
-            <textarea name="content" cols="30" rows="3" placeholder="Type here!" required></textarea>
-            <input type="submit" value="Post">
+            <textarea id="textbox" name="content" cols="30" rows="3" placeholder="Type here!" required></textarea>
+            <input id="post-btn" type="submit" value="Post">
         </form>
         <%}%>
         <div id="post-list-container">
-            <ul>
+            <ul class="post-block">
                 <% for(post of posts){ %>
                     <%- include('_post') -%>
                 <% } %>
@@ -22,7 +21,7 @@
     
     <section id="users-friends">
         <%if(locals.user){%>
-            <h4>Friends</h4>
+            <h4>Users</h4>
             <% for (u of all_user){%>
                     <p>
                         <a href="/users/profile/<%= u.id %>"><%= u.name %></a>

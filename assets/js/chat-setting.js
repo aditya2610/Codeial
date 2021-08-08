@@ -20,11 +20,14 @@ class Delete{
     delete_message(messageId){
         $(messageId).click(function(e){
             e.preventDefault();
+            console.log("Message to be deleted=  ",messageId);
+            console.log($(messageId).attr('href'));
             $.ajax({
                 type:'get',
                 url:$(messageId).attr('href'),
+                
                 success:function(data){
-                    console.log(data.data);
+                    console.log("Mesaage deleted... ",data.data.message_id);
                     $(`#${data.data.message_id}`).remove();
 
                     new Noty({

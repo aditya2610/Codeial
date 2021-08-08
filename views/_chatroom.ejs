@@ -38,10 +38,10 @@
     </div>
     <%}else{%>
         <% if(locals.user){ %>
+            
             <div id="chat-box">
                 <div id="message-list-container">
                     <% for(data of messages) {%>
-                        <% console.log(data)%>
                         <% if(data.user_email==locals.user.email){ %>
                             <div id="<%= data.id %>">
                                 <div class="seperate-message" id="<%=data.id.slice(20)%>">

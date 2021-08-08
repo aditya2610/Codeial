@@ -42,27 +42,13 @@ gulp.task('js',function(done){
     done();
 });
 
-gulp.task('img',function(done){
-    gulp.src('./assets/**/*.+(png|jpg|svg|jpeg)')
-    .pipe(imagemin())
-    .pipe(rev())
-    .pipe(gulp.dest('./public/assets'))
-    .pipe(rev.manifest({
-        cwd:'public',
-        merge:true
-    }))
-    .pipe(gulp.dest('./public/assets'));
-    done();    
-})
-
-// empty the public/asset directory
 
 gulp.task('clearAssets',function(done){
     del.sync('./public/assets');
     done();
 })
 
-gulp.task('build',gulp.series('clearAssets','css','js','img'),async function(done){
+gulp.task('build',gulp.series('clearAssets','css','js'),async function(done){
     done();
 })
 

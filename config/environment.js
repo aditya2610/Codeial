@@ -33,7 +33,7 @@ const development = {
     },
     google_client_id: "42607784427-k8a1jmigdlk50ldftj8odlu8cr1md9s0.apps.googleusercontent.com",
     google_client_secret : "G89N1Fq_UEyPcKiWTy7uzVMt",
-    google_call_back_url: "http://localhost:8000/users/auth/google/callback",
+    google_call_back_url: "http://3.108.64.245.strangled.net/users/auth/google/callback",
     jwt_secret: 'codeial',
     morgan:{
         mode: 'dev',

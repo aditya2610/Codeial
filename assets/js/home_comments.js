@@ -49,23 +49,25 @@
     // method to create data in DOM
     let newCommentDom = function(comments){
         return $(`
-            <li id="comment-${comments._id}">
-                <p>
-                    <small>
-                        <a class="delete-comment-button" href="/comments/destroy/${comments._id}">Delete</a>
-                    </small>
-                    ${comments.content}
-                    <br>
-                    <small>${comments.user.name}</small>
+                <div id="comment-${comments._id}" class="comments-blocks">
+                    <p>
+                        <small style="font-size:1.2rem; color: black;">${comments.user.name}</small>
+                        <br>
+                        <p class="comment-content">${comments.content}</p>
 
-                    <br>
-                    <small>
-                        <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comments._id}&type=Comment">
-                            0 Likes
-                        </a>
-                    </small>
-                </p>
-        </li>`)
+                            <small>
+                                <a class="delete-comment-button" href="/comments/destroy/${comments._id}"><i class="fas fa-trash icon"></i></a>
+                            </small>
+                        <small>
+                                <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comments._id}&type=Comment">
+                                    0 <i class="fas fa-thumbs-up"></i>
+                                </a>
+                                
+                        </small>
+                    </p>
+                </div>
+
+            `)
     }
 
     let deleteComment = function(deleteLink){

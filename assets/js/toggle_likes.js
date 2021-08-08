@@ -1,4 +1,3 @@
-
 class ToggleLike{
     constructor(toggleElement){
         this.toggler = toggleElement;
@@ -17,8 +16,8 @@ class ToggleLike{
             })
             .done(function(data){
                 let likesCount = parseInt($(self).attr('data-likes'));
-                // console.log(likesCount);
-                //console.log("like: ",data.data.deleted);
+                console.log(likesCount);
+                console.log("like: ",data.data.deleted);
                 if(data.data.deleted == true){
                     likesCount -= 1;
                 }else{
@@ -26,7 +25,7 @@ class ToggleLike{
                 }
 
                 $(self).attr('data-likes', likesCount);
-                $(self).html(`${likesCount} Likes`);
+                $(self).html(`${likesCount} <i class="fas fa-thumbs-up"></i>`);
             })
             .fail(function(errData){
                 console.log('error in completing the request');

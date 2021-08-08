@@ -9,8 +9,8 @@ module.exports.create =async function(req,res){
             content:req.body.content,
             user: req.user._id
         });
- 
         if(req.xhr){
+            console.log("xhr request");
             return res.status(200).json({
                 data: {
                     post: post
